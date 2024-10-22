@@ -11,15 +11,13 @@
     display: flex;
     width: 100%;
     height: 10vh;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 3em;
     background-color: #000814;
 }
 
 .logo-image{
-    display: flex;
-    width: 4vw;
+    width: 10vw;
 }
 
 h1{
@@ -29,22 +27,22 @@ h1{
 
 .header-options-container{
     display: flex;
+    flex-wrap: wrap;
     height: 5vh;
     justify-content: center;
     align-items: center;
-    gap: 10em;
+    gap: 1em;
 }
 
 .header-options{
     text-decoration: none;
     color: #f5f5f5;
     font-family: "Montserrat", sans-serif;
-    padding: 0.6em;
 }
 
 .login-button{
     display: flex;
-    width: 5vw;
+    width: 9vw;
     height: 5vh;
     align-items: center;
     justify-content: center;
@@ -65,10 +63,31 @@ h1{
     border-radius: 1em;
 }
 
+.buy-button-container{
+    display: flex;
+    padding: 10px;
+}
+
+.buy-button{
+    width: 15vw;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFC300;
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+}
+
+.buy-button:hover{
+    transition-duration: 0.3s;
+    background-color: #003566;
+    color: #f5f5f5;
+}
+
 /*main container with all info*/
 .main-container{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 /*each item of container*/
@@ -78,40 +97,45 @@ h1{
     padding: 10px;
     font-size: 20px;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 /*left site styles*/
 .left-aside {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     background-color: rgba(199, 183, 183, 0.5);
-    border-top-left-radius: 10px;
+    border-radius: 10px;
     font-family: "Montserrat", sans-serif;
+}
+
+.item-list-container{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*item list styles*/
 .item-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     list-style: none;
-}
-
-/*center site styles*/
-.center-aside {
-    background-color: white;
-    z-index: 100;
 }
 
 /*right site styles*/
 .right-aside {
     background-color: rgba(199, 183, 183, 0.5);
-    border-top-right-radius: 10px;
+    border-radius: 10px;
 }
 
 .right-aside-subtitle{
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -131,25 +155,28 @@ input{
 }
 
 .form-button{
-    width: 5vw;
+    width: 20vw;
     height: 5vh;
     border: none;
     border-radius: 10px;
     background-color: #FFC300;
     font-family: "Montserrat", sans-serif;
+    font-size: large;
 }
 
 .card-img{
     display: flex;
-    width: 15vw;
+    width: 20vw;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .ring-container{
     display: flex;
     align-items: center;
     background-color: rgba(199, 183, 183, 0.5);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px #000;
 }
 
 .card-title{
@@ -188,18 +215,296 @@ input{
 
 .social-media-img{
     display: flex;
-    width: 2vw;
+    width: 5vw;
 }
 
 .footer-list{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left: 30px;
+    padding-left: 10px;
     list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.footer-content{
+    font-family: "Montserrat", sans-serif;
 }
 
 .footer-options{
     color: #f5f5f5;
     text-decoration: none;
 }
+
+@media only screen and (min-width: 360px){
+    .header-container{
+        justify-content: center;
+        height: 15vh;
+        flex-wrap: wrap;
+    }
+
+    .ring-container{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buy-button-container{
+        justify-content: center;
+    }
+
+    .buy-button{
+        width: 40vw;
+    }
+
+    .card-img{
+        width: 50vw;
+        border-radius: 10px;
+    }
+
+    .item-list{
+        gap: 8px;
+    }
+
+    .footer-container{
+        gap: 20px;
+    }
+
+    .footer-list{
+        text-decoration: underline;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    /*left aside at first position*/
+    .aside-container:nth-child(1){
+        order: 1;
+    }
+
+    /*right aside at second position*/
+    .aside-container:nth-child(3){
+        order: 2;
+    }
+}
+
+/*@media only screen and (min-width: 1152px) {
+    .header-container{
+        display: flex;
+        width: 100%;
+        height: 10vh;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+        background-color: #000814;
+    }
+    
+    .logo-image{
+        display: flex;
+        width: 4vw;
+    }
+    
+    h1{
+        color: #f5f5f5;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .header-options-container{
+        display: flex;
+        height: 5vh;
+        justify-content: center;
+        align-items: center;
+        gap: 10em;
+    }
+    
+    .header-options{
+        text-decoration: none;
+        color: #f5f5f5;
+        font-family: "Montserrat", sans-serif;
+        padding: 0.6em;
+    }
+    
+    .login-button{
+        display: flex;
+        width: 5vw;
+        height: 5vh;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1em;
+        text-decoration: none;
+        background-color: #FFC300;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .login-button:hover{
+        background-color: #FFD60A;
+    }
+    
+    .header-options:hover{
+        text-decoration: none;
+        color: #000;
+        background-color: #FFC300;
+        border-radius: 1em;
+    }
+    
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    
+    .aside-container{
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        font-size: 20px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .aside-container:nth-child(1){
+        order: -2;
+    }
+
+    .aside-container:nth-child(3){
+        order: 2;
+    }
+    
+    .left-aside {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: rgba(199, 183, 183, 0.5);
+        border-top-left-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .item-list{
+        list-style: none;
+    }
+    
+    .center-aside {
+        background-color: white;
+        z-index: 100;
+    }
+    
+    .right-aside {
+        background-color: rgba(199, 183, 183, 0.5);
+        border-top-right-radius: 10px;
+    }
+    
+    .right-aside-subtitle{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .form-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px; 
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    input{
+        height: 2vh;
+        border-radius: 10px;
+        border: none;
+    }
+    
+    .form-button{
+        width: 5vw;
+        height: 5vh;
+        border: none;
+        border-radius: 10px;
+        background-color: #FFC300;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .card-img{
+        display: flex;
+        width: 15vw;
+    }
+    
+    .ring-container{
+        display: flex;
+        align-items: center;
+        background-color: rgba(199, 183, 183, 0.5);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0px 5px 10px #000;
+    }
+    
+    .card-title{
+        padding-left: 10px;
+    }
+    
+    .card-price{
+        padding-left: 10px;
+    }
+    
+    .left-aside-item{
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .left-aside-item:hover{
+       color: #FFC300; 
+    }
+    
+    .footer-container{
+        display: flex;
+        width: 100%;
+        background-color: #003566;
+        color: #f5f5f5;
+        font-size: large;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .social-media{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .social-media-img{
+        display: flex;
+        width: 2vw;
+    }
+    
+    .footer-list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 30px;
+        list-style: none;
+    }
+    
+    .footer-options{
+        color: #f5f5f5;
+        text-decoration: none;
+    }
+    
+    .buy-button-container{
+        display: flex;
+        padding: 10px;
+    }
+    
+    .buy-button{
+        width: 5vw;
+        height: 5vh;
+        border: none;
+        border-radius: 10px;
+        background-color: #FFC300;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .buy-button:hover{
+        transition-duration: 0.3s;
+        background-color: #003566;
+        color: #f5f5f5;
+    }
+}*/
